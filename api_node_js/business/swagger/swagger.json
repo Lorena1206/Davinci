@@ -1,0 +1,60 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Api generada el cargue de archivos”",
+    "version": "1.0.0",
+    "title": "Cargue Davinci”"
+  },
+  "host": "localhost:4201",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/cargue": {
+      "post": {
+        "tags": [
+          "RutaAPI"
+        ],
+        "summary": "Realiza cargue masivo de datos",
+        "description": "",
+        "operationId": "Cargue",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Objeto a enviar",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Peticion"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Peticion": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string",
+          "example": "datos leidos archivo"
+        }
+      }
+    }
+  }
+}
