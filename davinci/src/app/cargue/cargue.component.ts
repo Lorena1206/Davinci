@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-cargue',
@@ -28,8 +29,15 @@ export class CargueComponent implements OnInit {
   async cargarArchivo(data: any) {
     try {
       console.log(data);
-      let response = await this.dataService.realizarCargue(data).toPromise();
-      console.log(response)
+      let response: any = await this.dataService.realizarCargue(data).toPromise();
+      console.log(response);
+      Swal.fire({
+        title: 'Exito!',
+        text: response['resultado'],
+        icon: 'success',
+        confirmButtonText: 'Aceptar',
+        heightAuto: false
+      })
     } catch (error) {
       console.log(error)
     }

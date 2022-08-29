@@ -1,9 +1,20 @@
-<div>
-    <h1 class="body">Cargue Archivo</h1>
-    
-    <p>Seleccione el archivo a cargar</p>
-    
-    <input type="file" name="cargue" [(ngModel)]="data" (change)="prueba($event)" />
-
+<div class="divContent">
+  <div class="card mt-2 div1">
+    <div class="card-body">
+      <div class="imagendavinci">
+        <img src="assets/imagen/davinci.png" />
+      </div>
+      <p>Seleccione el archivo a cargar</p>
+      <div class="divBoton">
+        <div class="file-select" id="src-file1">
+          <input
+            type="file"
+            name="cargue"
+            [(ngModel)]="data"
+            (change)="prueba($event)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
